@@ -15,5 +15,9 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@fontsource-variable/m-plus-2": "^5.0.18",
+    "@fontsource-variable/rubik": "^5.0.23"
+  }
 }
