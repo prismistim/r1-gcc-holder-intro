@@ -16,7 +16,7 @@ import SvgChevronRight from '../assets/images/chevron_right.svg'
 ---
 
 <Layout title="r1-gcc-holder">
-	<header slot="header" class="mt-10 mx-5">
+	<header slot="header" class="mt-10 mx-5 sm:mx-auto sm:w-80">
 		<h1 class='flex items-center'>
 			<Image src={SvgProductIcon} alt='' class='w-8'></Image>
 			<span class='ml-4'>r1-gcc-holder</span>
@@ -27,11 +27,11 @@ import SvgChevronRight from '../assets/images/chevron_right.svg'
 			<TryBtn></TryBtn>
 		</div>
 	</header>
-	<main slot="main" class="mt-10 mx-5">
+	<main slot="main" class="mt-10 mx-5 sm:mx-auto sm:w-80 md:w-[688px]">
 		<div class="mt-12 space-y-10">
 			<section>
 				<SectionTitle>端末がカード代わりになる</SectionTitle>
-				<div class="mt-4 space-y-8">
+				<div class="mt-4 space-y-8 md:space-y-0 md:inline-flex md:gap-x-16">
 					<StepItem 
 						stepNo={1}
 						imagePath='/src/assets/images/s1_step_1.png'
@@ -55,16 +55,18 @@ import SvgChevronRight from '../assets/images/chevron_right.svg'
 			<div class="border"></div>
 			<section>
 				<SectionTitle>カードの有効期限が確認できる</SectionTitle>
-				<div class='mt-4 flex justify-center'>
-					<Image src={ImgS2} alt='' class='w-32'>
-				</div>
-				<div class="flex justify-center">
-					<div class='mt-4 p-2 bg-[#f3f4f6] rounded-md inline-block'>
-						<p class='inline text-xs'>Googleカレンダーでリマインダーを登録することもできます。</p>
-						<div class='flex mt-1 gap-x-1 justify-center'>
-							<Image src={ImgS2Reminder1} alt='' class='w-36' />
-							<Image src={SvgChevronRight} alt='' />
-							<Image src={ImgS2Reminder2} alt='' class='w-36' />
+				<div class='md:flex gap-x-10 md:justify-center md:items-center'>
+					<div class='mt-4 flex md:block justify-center'>
+						<Image src={ImgS2} alt='' class='w-32'>
+					</div>
+					<div class="flex justify-center">
+						<div class='mt-4 p-2 bg-[#f3f4f6] rounded-md inline-block'>
+							<p class='inline text-xs'>Googleカレンダーでリマインダーを登録することもできます。</p>
+							<div class='flex mt-1 gap-x-1 justify-center'>
+								<Image src={ImgS2Reminder1} alt='' class='w-36' />
+								<Image src={SvgChevronRight} alt='' />
+								<Image src={ImgS2Reminder2} alt='' class='w-36' />
+							</div>
 						</div>
 					</div>
 				</div>
