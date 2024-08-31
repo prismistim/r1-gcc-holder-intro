@@ -8,6 +8,7 @@ import SectionTitle from '../components/SectionTitle.astro';
 import TryBtn from '../components/TryBtn.astro';
 
 import SvgProductIcon from '../assets/logo.svg'
+import ImgMockUp from '../assets/images/mockup.png'
 import ImgS2 from '../assets/images/s2.png'
 import ImgS3 from '../assets/images/s3.png'
 import ImgS2Reminder1 from '../assets/images/s2_reminder_1.png'
@@ -16,18 +17,25 @@ import SvgChevronRight from '../assets/images/chevron_right.svg'
 ---
 
 <Layout title="r1-gcc-holder">
-	<header slot="header" class="mt-10 mx-5 sm:mx-auto sm:w-80">
+	<header slot="header" class="mt-10 max-w-80 mx-auto md:w-[688px] md:max-w-none">
 		<h1 class='flex items-center'>
 			<Image src={SvgProductIcon} alt='' class='w-8'></Image>
 			<span class='ml-4'>r1-gcc-holder</span>
 		</h1>
-		<p class="mt-2 text-xl">かしこく管理で、<br>ゲームをもっと楽しく。</p>
-		<img class="mt-2">
-		<div class="mt-2 text-center">
-			<TryBtn></TryBtn>
+		<p class="mt-2 text-xl block md:hidden">かしこく管理で、<br>ゲームをもっと楽しく。</p>
+		<div class="md:flex w-full md:px-14 md:items-center">
+			<div class="flex justify-center md:block">
+				<Image src={ImgMockUp} alt='' class="w-[206px]"></Image>
+			</div>
+			<div>
+				<p class="text-[32px] hidden md:block">かしこく管理で、<br>ゲームをもっと楽しく。</p>
+				<div class="mt-6 text-center md:text-left">
+					<TryBtn></TryBtn>
+				</div>
+			</div>
 		</div>
 	</header>
-	<main slot="main" class="mt-10 mx-5 sm:mx-auto sm:w-80 md:w-[688px]">
+	<main slot="main" class="mt-10 max-w-80 mx-auto sm:w-80 md:w-[688px] sm:max-w-none">
 		<div class="mt-12 space-y-10">
 			<section>
 				<SectionTitle>端末がカード代わりになる</SectionTitle>
@@ -61,7 +69,7 @@ import SvgChevronRight from '../assets/images/chevron_right.svg'
 					</div>
 					<div class="flex justify-center">
 						<div class='mt-4 p-2 bg-[#f3f4f6] rounded-md inline-block'>
-							<p class='inline text-xs'>Googleカレンダーでリマインダーを登録することもできます。</p>
+							<p class='inline text-xs'>Googleカレンダーでリマインダーを登録することも<br class="sm:hidden">できます。</p>
 							<div class='flex mt-1 gap-x-1 justify-center'>
 								<Image src={ImgS2Reminder1} alt='' class='w-36' />
 								<Image src={SvgChevronRight} alt='' />
@@ -76,7 +84,7 @@ import SvgChevronRight from '../assets/images/chevron_right.svg'
 				<SectionTitle>アプリとしてインストールできる</SectionTitle>
 				<div class='mt-4 flex gap-x-4 justify-center items-center'>
 					<Image src={ImgS3} alt='' class='inline w-36' />
-					<p>すぐにQRコードを<br>表示できます。</p>
+					<p class="text-xs">すぐにQRコードを<br>表示できます。</p>
 				</div>
 			</section>
 			<section class="text-center">
@@ -88,7 +96,7 @@ import SvgChevronRight from '../assets/images/chevron_right.svg'
 			<SectionTitle>
 				<span class="text-xl text-primary">注意事項</span>
 			</SectionTitle>
-			<ul class='mt-5 space-y-5 text-xs'>
+			<ul class='mt-5 space-y-3 text-xs'>
 				<li>
 					本アプリは元サービスの運営会社側の許諾を得て開発したものではありません。カードに関するシステムの権利等は運営会社に帰属します。
 				</li>
@@ -105,13 +113,14 @@ import SvgChevronRight from '../assets/images/chevron_right.svg'
 		</section>
 		<section class='mt-5'>
 			<SectionTitle>Credit</SectionTitle>
-			<ul class="text-xs">
+			<ul class="text-xs mt-2 space-y-2">
 				<li>
+					<h3 class="font-medium">Development</h3>
 					<div>snowsphere</div>
-					<a>https://portal.snowsphere.net/</a>
 				</li>
 				<li>
-					<div>naito</div>
+					<h3 class="font-medium">Design (LP)</h3>
+					<div>hiro</div>
 				</li>
 			</ul>
 		</section>
