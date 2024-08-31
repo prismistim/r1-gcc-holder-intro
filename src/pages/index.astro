@@ -1,58 +1,132 @@
 ---
+import { Image } from 'astro:assets'
+
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import StepItem from '../components/StepItem.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import TryBtn from '../components/TryBtn.astro';
+
+import SvgProductIcon from '../assets/logo.svg'
+import ImgMockUp from '../assets/images/mockup.png'
+import ImgS2 from '../assets/images/s2.png'
+import ImgS3 from '../assets/images/s3.png'
+import ImgS2Reminder1 from '../assets/images/s2_reminder_1.png'
+import ImgS2Reminder2 from '../assets/images/s2_reminder_2.png'
+import SvgChevronRight from '../assets/images/chevron_right.svg'
 ---
 
 <Layout title="r1-gcc-holder">
-	<main>
-		<div class="max-w-[960px] mx-auto">
-			<div>
-				<h1>r1-gcc-holder</h1>
-				<p>かしこく管理で、ゲームをもっと楽しく。</p>
-				<button>使ってみる</button>
+	<header slot="header" class="mt-10 max-w-80 mx-auto md:w-[688px] md:max-w-none">
+		<h1 class='flex items-center'>
+			<Image src={SvgProductIcon} alt='' class='w-8'></Image>
+			<span class='ml-4'>r1-gcc-holder</span>
+		</h1>
+		<p class="mt-2 text-xl block md:hidden">かしこく管理で、<br>ゲームをもっと楽しく。</p>
+		<div class="md:flex w-full md:px-14 md:items-center">
+			<div class="flex justify-center md:block">
+				<Image src={ImgMockUp} alt='' class="w-[206px]"></Image>
 			</div>
 			<div>
-				<h2>本アプリの特徴</h2>
-				<div>
-					<h3>端末がカード代わりになる</h3>
-					<p>発行したカードのQRコードをアプリ内で読み取ることで、同じQRコードを画面上に表示できるようになります。</p>
-				</div>
-				<div>
-					<h3>カードの有効期限を管理できる</h3>
-					<p>カードの登録時や再チャージ時に発行日を入力することで、有効期限まであと何日かを簡単に確認できるようになり、Googleカレンダーなどにリマインドを作成することもできます。</p>
-				</div>
-				<div>
-					<h3>インストールができ、オフラインでも使える</h3>
-					<p>本アプリはPWAとして動作するため、ご利用の端末にインストールして使うことができます。また、カードに関するデータはすべて端末内に保存され、一度インストールが完了すればオフラインで利用することもできます。</p>
-				</div>
-				<div>comming soon...</div>
-			</div>
-			<div>
-				<h2>注意事項</h2>
-				<ul>
-					<li>
-						本アプリは元サービスの運営会社側の許諾を得て開発したものではありません。カードに関するシステムの権利等は運営会社に帰属します。
-					</li>
-					<li>
-						本アプリに関する内容に関して、元サービスの運営会社へのお問い合わせはご遠慮ください。
-					</li>
-					<li>
-						完全な動作の保証はできかねます。本アプリ利用時も発行したカードは必ず保管、携帯し自己責任で利用してください。
-					</li>
-					<li class="text-primary font-semibold">
-						システムの仕様がまだ十分に調査できていないため、有効期限の設定などが1日程度異なる可能性があります。また、特殊な仕様が存在する可能性があるため、本アプリを試す場合は残高が0円、もしくは少額の状態で一度試していただくことをお勧めします。
-					</li>
-				</ul>
-			</div>
-			<div>
-				<h2>Credit</h2>
-				<div>
-					<span>snowsphere</span>
+				<p class="text-[32px] hidden md:block">かしこく管理で、<br>ゲームをもっと楽しく。</p>
+				<div class="mt-6 text-center md:text-left">
+					<TryBtn></TryBtn>
 				</div>
 			</div>
 		</div>
+	</header>
+	<main slot="main" class="mt-10 max-w-80 mx-auto sm:w-80 md:w-[688px] sm:max-w-none">
+		<div class="mt-12 space-y-10">
+			<section>
+				<SectionTitle>端末がカード代わりになる</SectionTitle>
+				<div class="mt-4 space-y-8 md:space-y-0 md:inline-flex md:gap-x-16">
+					<StepItem 
+						stepNo={1}
+						imagePath='/src/assets/images/s1_step_1.png'
+						alt=''
+						description='カードに記載されたQRコードをスキャンして登録します。'
+					></StepItem>
+					<StepItem 
+						stepNo={2}
+						imagePath='/src/assets/images/s1_step_2.png'
+						alt=''
+						description='アプリでQRコードを表示します。'
+					></StepItem>
+					<StepItem 
+						stepNo={3}
+						imagePath='/src/assets/images/s1_step_3.png'
+						alt=''
+						description='カードリーダーに表示したQRコードを読み取らせます。'
+					></StepItem>
+				</div>
+			</section>
+			<div class="border"></div>
+			<section>
+				<SectionTitle>カードの有効期限が確認できる</SectionTitle>
+				<div class='md:flex gap-x-10 md:justify-center md:items-center'>
+					<div class='mt-4 flex md:block justify-center'>
+						<Image src={ImgS2} alt='' class='w-32'>
+					</div>
+					<div class="flex justify-center">
+						<div class='mt-4 p-2 bg-[#f3f4f6] rounded-md inline-block'>
+							<p class='inline text-xs'>Googleカレンダーでリマインダーを登録することも<br class="sm:hidden">できます。</p>
+							<div class='flex mt-1 gap-x-1 justify-center'>
+								<Image src={ImgS2Reminder1} alt='' class='w-36' />
+								<Image src={SvgChevronRight} alt='' />
+								<Image src={ImgS2Reminder2} alt='' class='w-36' />
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="border"></div>
+			<section>
+				<SectionTitle>アプリとしてインストールできる</SectionTitle>
+				<div class='mt-4 flex gap-x-4 justify-center items-center'>
+					<Image src={ImgS3} alt='' class='inline w-36' />
+					<p class="text-xs">すぐにQRコードを<br>表示できます。</p>
+				</div>
+			</section>
+			<section class="text-center">
+				<TryBtn></TryBtn>
+			</section>
+		</div>
+		<div class="mt-10 border border-primary"></div>
+		<section class="mt-5">
+			<SectionTitle>
+				<span class="text-xl text-primary">注意事項</span>
+			</SectionTitle>
+			<ul class='mt-5 space-y-3 text-xs'>
+				<li>
+					本アプリは元サービスの運営会社側の許諾を得て開発したものではありません。カードに関するシステムの権利等は運営会社に帰属します。
+				</li>
+				<li>
+					本アプリに関する内容に関して、元サービスの運営会社へのお問い合わせはご遠慮ください。
+				</li>
+				<li>
+					完全な動作の保証はできかねます。本アプリ利用時も発行したカードは必ず保管、携帯し自己責任で利用してください。
+				</li>
+				<li>
+					システムの仕様がまだ十分に調査できていないため、有効期限の設定などが1日程度異なる可能性があります。また、特殊な仕様が存在する可能性があるため、本アプリを試す場合は残高が0円、もしくは少額の状態で一度試していただくことをお勧めします。
+				</li>
+			</ul>
+		</section>
+		<section class='mt-5'>
+			<SectionTitle>Credit</SectionTitle>
+			<ul class="text-xs mt-2 space-y-2">
+				<li>
+					<h3 class="font-medium">Development</h3>
+					<div>snowsphere</div>
+				</li>
+				<li>
+					<h3 class="font-medium">Design (LP)</h3>
+					<div>hiro</div>
+				</li>
+			</ul>
+		</section>
 	</main>
-	<footer>
-		©2024 snowsphere
+	<footer slot="footer" class='mt-5 py-4 bg-primary text-center text-white'>
+		<div>©2024 snowsphere</div>
+		<div>#gcch_app</div>
 	</footer>
 </Layout>
