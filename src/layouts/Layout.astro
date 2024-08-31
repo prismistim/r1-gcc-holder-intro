@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/rubik'
 import '@fontsource-variable/m-plus-2'
+import { SEO } from 'astro-seo'
 
 interface Props {
 	title: string;
@@ -13,11 +14,38 @@ const { title } = Astro.props;
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <SEO
+      title="r1-gcc-holder"
+      description="かしこく管理で、ゲームをもっと楽しく。"
+      openGraph={{
+        basic: {
+          title: 'r1-gcc-holder',
+          type: 'website',
+          image: 'https://gcch.asayake.dev/pwa-512x512.png'
+        }
+      }}
+      ,
+      twitter={{
+        creator: '@prismist_m'
+      }}
+      extend={{
+        link: [{ rel: 'icon', href: 'https://gcch.asayake.dev/favicon.ico' }],
+        meta: [
+          {
+            name: 'twitter:image',
+            content: 'https://gcch.asayake.dev/pwa-192x192.png'
+          },
+          {
+            name: 'twitter:title',
+            content: 'r1-gcc-holder'
+          },
+          { name: 'twitter:description', content: 'かしこく管理で、ゲームをもっと楽しく。' }
+        ]
+      }}
+    />
 	</head>
 	<body class="font-sans text-primary-content">
 		<slot name="header"></slot>
